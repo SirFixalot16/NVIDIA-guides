@@ -35,6 +35,13 @@ cd /path/to/taotest
 mkdir models
 mkdir data
 ```
+
+Create and activate conda environment
+```shell
+conda create -n taotest python==3.8
+conda activate taotest
+```
+
 Download TensorRT
 ```shell
 wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/secure/8.6.1/tars/TensorRT-8.6.1.6.Linux.x86_64-gnu.cuda-12.0.tar.gz
@@ -70,6 +77,13 @@ docker pull nvcr.io/nvidia/tao/tao-toolkit:5.0.0-tf1.15.5
 docker pull nvcr.io/nvidia/tao/tao-toolkit:5.0.0-deploy
 ```
 
+Log in to nvcr:
+```shell
+docker login nvcr.io
+Username: $oauthtoken
+Password: <MY API KEY>
+```
+
 Create .tao_mounts.json at home folder
 ```shell
 nano /path/to/home/.tao_mounts.json
@@ -92,3 +106,6 @@ Tao-toolkit version 5.0.0 is installed and all functions can be used
 ```shell
 tao
 ```
+
+## Tao model training
+...
