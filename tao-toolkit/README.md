@@ -108,4 +108,35 @@ tao
 ```
 
 ## Tao model training
-...
+
+Example model training for yolov4, consult tao-toolkit pretrained models documnentation for other models:
+```shell
+cd /path/to/taotest/models
+wget --content-disposition 'https://api.ngc.nvidia.com/v2/models/org/nvidia/team/tao/pretrained_object_detection/resnet18/files?redirect=true&path=resnet_18.hdf5' -O resnet_18.hdf5
+mkdir ./yolov4_results
+```
+
+### Example: Data pre-processing for YOLO Object Detection
+
+Tao-toolkit trains yolov4 not on the standard YOLO label format, but the kitti format. <br>
+YOLO label format: <br>
+| Class (int) | x-center (float) | y-center (float) | width (float) | height (float) |
+| :---        |    :----:        |          :----:  | :----:        | ---:           |
+| 0           | 0.56             | 0.72             | 0.22          | 0.67           |
+| 1           | 0.54             | 0.55             | 0.52          | 0.24           |
+
+<br>Kitti format: <br>
+| Values | Name       | Description                                              |
+|:---    | :----:     | ---:                                                     | 
+| 1      | type       | Object type (Car, Van, Truck, etc.)                      |
+| 1      | truncated  | Float 0-1 (truncated ratio)                              |
+| 1      | occluded   | Integer (0=visible, 1=partly occluded, 2=fully occluded) |
+| 1      | alpha      | Observation angle (-pi..pi)                              |
+| 4      | bbox       | 2D bounding box (x1,y1,x2,y2) in pixels                  |
+| 3      | dimensions | 3D dimensions (height, width, length) in meters          |
+| 3      | location   | 3D location (x,y,z) in camera coordinates                |
+| 1      | rotation_y | Rotation around Y-axis in camera coordinates             |
+
+<br>Example: <br>
+Fire 0 0 0 614 181 727 284 0 0 0 0 0 0 0 <br>
+Smoke 0 0 0 123 456 789 012 0 0 0 0 0 0 0
