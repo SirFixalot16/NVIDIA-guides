@@ -1,0 +1,13 @@
+
+export_config {
+  target_formats: "ONNX"
+  target_formats: "ENGINE"
+  precision: FP16 
+  output_file: "/path/to/taotest/models/yolov4tiny/kitti_fire_10.etlt"
+  calibration_data_file: "" 
+  calibration_cache_file: "" 
+}
+
+tlt_model: "/path/to/taotest/models/yolov4tiny/weights/yolov4_cspdarknet_tiny_epoch_010.hdf5"
+key: "nvidia_tlt"
+

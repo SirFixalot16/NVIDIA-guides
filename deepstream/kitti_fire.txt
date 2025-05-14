@@ -1,0 +1,132 @@
+#[property]
+#gpu-id=0
+#net-scale-factor=0.0039215697906911373
+#model-color-format=0
+#custom-network-config=/path/to/kitti_fire.cfg
+#onnx-file=/path/to/kitti_fire.onnx
+#model-engine-file=/path/to/kitti_fire.engine
+#int8-calib-file=calib.table
+#labelfile-path=/path/to/firesmoke_labels.txt
+#batch-size=1
+#network-mode=0
+#num-detected-classes=2
+#interval=0
+#gie-unique-id=1
+#process-mode=1
+#network-type=0
+#cluster-mode=2
+#maintain-aspect-ratio=0
+#symmetric-padding=1
+#force-implicit-batch-dim=0
+#workspace-size=2000
+#parse-bbox-func-name=NvDsInferParseYolo
+#parse-bbox-func-name=NvDsInferParseYoloCuda
+#custom-lib-path=/path/to/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/libnvdsinfer_custom_impl_Yolo.so
+#engine-create-func-name=NvDsInferYoloCudaEngineGet
+#output-tensor-meta=1
+
+[primary-gie]
+enable=1
+gpu-id=0
+model-engine-file=/path/to/kitti_fire.engine
+#onnx-file=/path/to//kitti_fire.onnx
+#labelfile-path=/path/to/firesmoke_labels.txt
+#batch-size=1
+#network-type=0
+#network-mode=0
+#num-detected-classes=2
+#interval=0
+gie-unique-id=1
+nvbuf-memory-type=0
+#custom-lib-path=/path/to/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/libnvdsinfer_custom_impl_Yolo.so
+#parse-bbox-func-name=NvDsInferParseYolo
+#cluster-mode=2
+#maintain-aspect-ratio=0
+#symmetric-padding=1
+#force-implicit-batch-dim=0
+#output-tensor-meta=1
+config-file=/path/to/kitti_fire_config.txt
+
+# OSD and color info (optional)
+bbox-border-color0=1;0;0;1
+bbox-border-color1=0;1;1;1
+bbox-border-color2=0;0;1;1
+bbox-border-color3=0;1;0;1
+
+[class-attrs-all]
+nms-iou-threshold=0.2
+pre-cluster-threshold=0.25
+topk=300
+
+[application]
+enable-perf-measurement=1
+perf-measurement-interval-sec=5
+#gie-kitti-output-dir=streamscl
+
+[tiled-display]
+enable=1
+rows=1
+columns=1
+width=1920
+height=1080
+gpu-id=0
+#(0): nvbuf-mem-default - Default memory allocated, specific to particular platform
+#(1): nvbuf-mem-cuda-pinned - Allocate Pinned/Host cuda memory, applicable for Tesla
+#(2): nvbuf-mem-cuda-device - Allocate Device cuda memory, applicable for Tesla
+#(3): nvbuf-mem-cuda-unified - Allocate Unified cuda memory, applicable for Tesla
+#(4): nvbuf-mem-surface-array - Allocate Surface Array memory, applicable for Jetson
+nvbuf-memory-type=0
+
+[streammux]
+gpu-id=0
+##Boolean property to inform muxer that sources are live
+live-source=0
+batch-size=1
+##time out in usec, to wait after the first buffer is available
+##to push the batch even if the complete batch is not formed
+batched-push-timeout=40000
+## Set muxer output width and height
+width=1920
+height=1080
+##Enable to maintain aspect ratio wrt source, and allow black borders, works
+##along with width, height properties
+enable-padding=0
+nvbuf-memory-type=0
+
+[sink0]
+enable=1
+#Type - 1=FakeSink 2=EglSink/nv3dsink (Jetson only) 3=File
+type=2
+sync=1
+source-id=0
+gpu-id=0
+nvbuf-memory-type=0
+
+[source0]
+enable=1
+#Type - 1=CameraV4L2 2=URI 3=MultiURI 4=RTSP
+type=3
+uri=file:/path/to/fr08.webm
+num-sources=1
+#drop-frame-interval=2
+gpu-id=0
+# (0): memtype_device   - Memory type Device
+# (1): memtype_pinned   - Memory type Host Pinned
+# (2): memtype_unified  - Memory type Unified
+cudadec-memtype=0
+
+[osd]
+enable=1
+gpu-id=0
+border-width=1
+text-size=15
+text-color=1;1;1;1;
+text-bg-color=0.3;0.3;0.3;1
+font=Serif
+show-clock=0
+clock-x-offset=800
+clock-y-offset=820
+clock-text-size=12
+clock-color=1;0;0;0
+nvbuf-memory-type=0
+
