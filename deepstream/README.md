@@ -52,36 +52,6 @@ sudo cp /path/to/taodeep/cudnn-9.3.0/include/* /usr/include
 ls
 ```
 
-Log in to nvcr:
-```shell
-docker login nvcr.io
-Username: $oauthtoken
-Password: <MY API KEY>
-```
-
-Create .tao_mounts.json at home folder
-```shell
-nano /path/to/home/.tao_mounts.json
-```
-Enter the following:
-```json
-{
-  "DockerOptions": {
-    "user": "uid:gid"
-  },
-  "Mounts": [
-    {
-      "source": "/path/to/taodeep",
-      "destination": "/path/to/taodeep",
-      "type": "bind" 
-    }]
-}
-```
-Tao-toolkit version 5.0.0 is installed and all functions can be used
-```shell
-tao
-```
-
 ## Deepstream
 
 Deepstream prerequisites:
@@ -115,7 +85,7 @@ deepstream-app
 ```
 
 
-## Tao model conversion to engine
+## Model conversion to engine
 .
 
 ## Running engine on deepstream
