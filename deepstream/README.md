@@ -44,7 +44,7 @@ sudo cp /path/to/taodeep/TensorRT-10.11.0.33/include/* /usr/local/cuda/include
 export PATH="/path/to/taodeep/TensorRT-10.11.0.33/bin:$PATH"
 ```
 
-Download CuDNN
+Download CuDNN (tarball)
 ```shell
 wget https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-x86_64/cudnn-linux-x86_64-9.3.0.75_cuda12-archive.tar.xz
 tar -xf ./cudnn-linux-x86_64-9.3.0.75_cuda12-archive.tar.xz -C ./
@@ -56,6 +56,15 @@ sudo cp /path/to/taodeep/cudnn-9.3.0/include/* /usr/include
 sudo cp /path/to/taodeep/cudnn-9.3.0/lib/* /usr/local/cuda/lib64
 sudo cp /path/to/taodeep/cudnn-9.3.0/include/* /usr/local/cuda/include
 ls
+```
+
+Download CuDNN (.deb)
+```shell
+wget https://developer.download.nvidia.com/compute/cudnn/9.3.0/local_installers/cudnn-local-repo-ubuntu2204-9.3.0_1.0-1_amd64.deb
+sudo dpkg -i cudnn-local-repo-ubuntu2204-9.3.0_1.0-1_amd64.deb
+sudo cp /var/cudnn-local-repo-ubuntu2204-9.3.0/cudnn-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cudnn
 ```
 
 ## Deepstream
