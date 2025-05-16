@@ -115,7 +115,15 @@ deepstream-app
 
 
 ## Model conversion to engine
-.
+Follow these guides for model conversion:
+<ul>
+<li>
+https://wiki.seeedstudio.com/YOLOv8-DeepStream-TRT-Jetson/
+</li>
+<li>
+https://docs.ultralytics.com/fr/guides/deepstream-nvidia-jetson/#deepstream-configuration-for-yolo11
+</li>
+</ul>
 
 ## Running engine on deepstream
 
