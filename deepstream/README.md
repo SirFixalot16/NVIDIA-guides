@@ -6,14 +6,8 @@ Guides for installation and usage of NVIDIA tools
 <ul>
 <li>Ubuntu: 22.04 </li>
 <li>CUDA: 12.6 </li>
-<li>TensorRT: 10.3.0.26 for CUDA 12.x </li>
+<li>TensorRT: 10.11.0.33 for CUDA 12.x </li>
 <li>CuDNN: 9.3.0 for CUDA 12.x </li>
-<li>Docker images: 
-<ul>
-<li>nvcr.io/nvidia/tao/tao-toolkit:5.0.0-deploy </li>
-<li>nvcr.io/nvidia/tao/tao-toolkit:5.0.0-tf1.15.5 </li>
-</ul>
-</li>
 <li>Miniconda: Python 3.10.x </li>
 <li>Storage: >120GB </li>
 <li>GPU: VRAM>12GB </l>
@@ -38,14 +32,14 @@ conda activate taodeep
 
 Download TensorRT
 ```shell
-wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.3.0/tars/TensorRT-10.3.0.26.Linux.x86_64-gnu.cuda-12.5.tar.gz
-tar -xzf ./TensorRT-10.3.0.26.Linux.x86_64-gnu.cuda-12.5.tar.gz -C ./
+wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.11.0/tars/TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
+tar -xzf ./TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz -C ./
 ls
-export TRT_LIB_PATH="/path/to/taodeep/TensorRT-10.3.0.26/lib"
-export TRT_INC_PATH="/path/to/taodeep/TensorRT-10.3.0.26/include"
-sudo cp /path/to/taodeep/TensorRT-10.3.0.26/lib/* /usr/lib/x86_64-linux-gnu/
-sudo cp /path/to/taodeep/TensorRT-10.3.0.26/include/* /usr/include
-export PATH="/path/to/taodeep/TensorRT-10.3.0.26/bin:$PATH"
+export TRT_LIB_PATH="/path/to/taodeep/TensorRT-10.11.0.33/lib"
+export TRT_INC_PATH="/path/to/taodeep/TensorRT-10.11.0.33/include"
+sudo cp /path/to/taodeep/TensorRT-10.11.0.33/lib/* /usr/lib/x86_64-linux-gnu/
+sudo cp /path/to/taodeep/TensorRT-10.11.0.33/include/* /usr/include
+export PATH="/path/to/taodeep/TensorRT-10.11.0.33/bin:$PATH"
 ```
 
 Download CuDNN
@@ -56,12 +50,6 @@ mv ./cudnn-linux-x86_64-9.3.0.75_cuda12-archive ./cudnn-9.3.0
 sudo cp /path/to/taodeep/cudnn-9.3.0/lib/* /usr/lib/x86_64-linux-gnu/
 sudo cp /path/to/taodeep/cudnn-9.3.0/include/* /usr/include
 ls
-```
-
-Beyond version 5.0.0, Docker images must be pulled
-```shell
-docker pull nvcr.io/nvidia/tao/tao-toolkit:5.0.0-tf1.15.5
-docker pull nvcr.io/nvidia/tao/tao-toolkit:5.0.0-deploy
 ```
 
 Log in to nvcr:
