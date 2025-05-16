@@ -22,6 +22,7 @@ mkdir /path/to/taodeep
 cd /path/to/taodeep
 mkdir models
 mkdir data
+mkdir configs
 ```
 
 Create and activate conda environment
