@@ -45,6 +45,7 @@ export TRT_LIB_PATH="/path/to/taodeep/TensorRT-10.3.0.26/lib"
 export TRT_INC_PATH="/path/to/taodeep/TensorRT-10.3.0.26/include"
 sudo cp /path/to/taodeep/TensorRT-10.3.0.26/lib/* /usr/lib/x86_64-linux-gnu/
 sudo cp /path/to/taodeep/TensorRT-10.3.0.26/include/* /usr/include
+export PATH="/path/to/taodeep/TensorRT-10.3.0.26/bin:$PATH"
 ```
 
 Download CuDNN
