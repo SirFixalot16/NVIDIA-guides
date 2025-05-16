@@ -67,6 +67,11 @@ Deepstream deinstallation in case of faulty installation:
 ```shell
 sudo rm -rf /usr/local/deepstream /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libgstnv* /usr/bin/deepstream* /usr/lib/x86_64-linux-gnu/gstreamer-1.0 libnvdsgst* /usr/lib/x86_64-linux-gnu/gstreamer-1.0/deepstream* /opt/nvidia/deepstream/deepstream*
 sudo rm -rf /usr/lib/x86_64-linux-gnu/libv41/plugins/libcuvidv4l2_plugin.so
+sudo dpkg --remove --force-remove-reinstreq deepstream-7.1
+sudo dpkg --configure -a
+sudo apt --fix-broken install
+sudo apt-get autoremove
+sudo apt-get clean
 ```
 
 Installing Deepstream (.deb):
