@@ -51,8 +51,8 @@ tar -xf ./cudnn-linux-x86_64-9.3.0.75_cuda12-archive.tar.xz -C ./
 mv ./cudnn-linux-x86_64-9.3.0.75_cuda12-archive ./cudnn-9.3.0
 sudo cp /path/to/taodeep/cudnn-9.3.0/lib/* /usr/lib/x86_64-linux-gnu/
 sudo cp /path/to/taodeep/cudnn-9.3.0/include/* /usr/include
-sudo cp /home/nhdandz/taodeep/cudnn-9.3.0/lib/* /usr/local/cuda/lib64
-sudo cp /home/nhdandz/taodeep/cudnn-9.3.0/include/* /usr/local/cuda/include
+sudo cp /path/to/taodeep/cudnn-9.3.0/lib/* /usr/local/cuda/lib64
+sudo cp /path/to/taodeep/cudnn-9.3.0/include/* /usr/local/cuda/include
 ls
 ```
 
