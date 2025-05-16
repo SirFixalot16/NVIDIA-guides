@@ -49,6 +49,8 @@ Download CuDNN
 wget https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-x86_64/cudnn-linux-x86_64-9.3.0.75_cuda12-archive.tar.xz
 tar -xf ./cudnn-linux-x86_64-9.3.0.75_cuda12-archive.tar.xz -C ./
 mv ./cudnn-linux-x86_64-9.3.0.75_cuda12-archive ./cudnn-9.3.0
+export CUDNN_INC_DIR=/path/to/taodeep/cudnn-9.3.0/include
+export CUDNN_LIB_DIR=/path/to/taodeep/cudnn-9.3.0/lib
 sudo cp /path/to/taodeep/cudnn-9.3.0/lib/* /usr/lib/x86_64-linux-gnu/
 sudo cp /path/to/taodeep/cudnn-9.3.0/include/* /usr/include
 sudo cp /path/to/taodeep/cudnn-9.3.0/lib/* /usr/local/cuda/lib64
