@@ -7,7 +7,7 @@ Guides for installation and usage of NVIDIA tools
 <li>Ubuntu: 22.04 </li>
 <li>CUDA: 12.6 </li>
 <li>TensorRT: 10.11.0.33 for CUDA 12.x </li>
-<li>CuDNN: 9.3.0 for CUDA 12.x </li>
+<li>CuDNN: >9.3.0 for CUDA 12.x </li>
 <li>Miniconda: Python 3.10.x </li>
 <li>Storage: >120GB </li>
 <li>GPU: VRAM>12GB </l>
@@ -30,7 +30,7 @@ conda create -n taodeep python==3.10.15
 conda activate taodeep
 ```
 
-Download TensorRT
+Download TensorRT (tarball)
 ```shell
 wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.11.0/tars/TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
 tar -xzf ./TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz -C ./
@@ -42,6 +42,15 @@ sudo cp /path/to/taodeep/TensorRT-10.11.0.33/include/* /usr/include
 sudo cp /path/to/taodeep/TensorRT-10.11.0.33/lib/* /usr/local/cuda/lib64
 sudo cp /path/to/taodeep/TensorRT-10.11.0.33/include/* /usr/local/cuda/include
 export PATH="/path/to/taodeep/TensorRT-10.11.0.33/bin:$PATH"
+```
+
+Download TensorRT (.deb)
+```shell
+wget https://developer.download.nvidia.com/compute/tensorrt/10.11.0/local_installers/nv-tensorrt-local-repo-ubuntu2204-10.11.0-cuda-12.9_1.0-1_amd64.deb
+sudo dpkg -i nv-tensorrt-local-repo-ubuntu2204-10.11.0-cuda-12.9_1.0-1_amd64.deb
+sudo cp /var/nv-tensorrt-local-repo-ubuntu2204-10.11.0-cuda-12.9/nv-tensorrt-local-5BF87A98-keyring.gpg /usr/share/keyrings/
+sudo apt update
+sudo apt install libnvinfer10 libnvinfer-dev libnvinfer-plugin10 libnvinfer-plugin-dev libnvonnxparsers10 libnvonnxparsers-dev
 ```
 
 Download CuDNN (tarball)
