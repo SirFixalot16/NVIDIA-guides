@@ -94,6 +94,10 @@ sudo apt-get autoremove
 sudo apt-get clean
 ```
 
+For issues regarding gstreamer, or any dependencies that may require building from source:<br>
+https://developer.ridgerun.com/wiki/index.php/DeepStream_7.0_examples
+<br>
+
 Installing Deepstream (.deb):
 ```shell
 wget --content-disposition 'https://api.ngc.nvidia.com/v2/resources/org/nvidia/deepstream/7.1/files?redirect=true&path=deepstream-7.1_7.1.0-1_amd64.deb' -o 'deepstream-7.1_7.1.0-1_amd64.deb'
@@ -110,7 +114,7 @@ sudo ldconfig
 
 Test run
 ```shell
-deepstream-app
+deepstream-app --version
 ```
 
 
