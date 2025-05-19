@@ -26,4 +26,7 @@ TensorRT / CuDNN: .tar instead of .deb for ease of configurations
 <li>
 tao-toolkit: https://github.com/NVIDIA-AI-IOT/nvidia-tao.git
 </li>
+<li>
+Deepstream-tao-apps: https://github.com/NVIDIA-AI-IOT/deepstream_tao_apps/tree/master
+</li>
 </ul>
