@@ -24,8 +24,11 @@ DeepStream-Yolo: https://github.com/marcoslucianops/DeepStream-Yolo.git
 TensorRT / CuDNN: .tar instead of .deb for ease of configurations
 </li>
 <li>
-tao-toolkit: https://github.com/NVIDIA-AI-IOT/nvidia-tao.git
+tao-toolkit (tao-tensorflow): https://github.com/NVIDIA-AI-IOT/nvidia-tao.git
 </li>
+<li>
+tao-pytorch: https://github.com/NVIDIA/tao_pytorch_backend
+</li>  
 <li>
 Deepstream-tao-apps: https://github.com/NVIDIA-AI-IOT/deepstream_tao_apps/tree/master
 </li>
