@@ -118,6 +118,12 @@ Test run
 deepstream-app --version
 ```
 
+Disable unneeded libraries:
+```shell
+sudo mv /usr/lib/x86_64-linux-gnu/gstreamer-1.0/deepstream/libnvdsgst_udp.so /usr/lib/x86_64-linux-gnu/gstreamer-1.0/deepstream/disabled_libnvdsgst_udp.so
+sudo mv /usr/lib/x86_64-linux-gnu/gstreamer-1.0/deepstream/libnvdsgst_inferserver.so /usr/lib/x86_64-linux-gnu/gstreamer-1.0/deepstream/disabled_libnvdsgst_inferserver.so
+```
+
 
 ## Model conversion to engine
 Follow these guides for model conversion:
