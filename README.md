@@ -11,7 +11,7 @@ Proposed compatibility matrix for python 3.8 - 3.10 on Ubuntu 22.04:
 
 Proposed installation process:
 <br>
-Miniconda -> CUDA (1 version) -> CuDNN (1 version) -> gstreamer -> Deepstream (1 version) -> TensorRT (multiple) -> tao-toolkit (1 version)
+Miniconda -> CUDA (1 version) -> CuDNN (1 version) -> gstreamer (disable conda) -> Deepstream (1 version) -> TensorRT (multiple, enable conda) -> tao-toolkit (1 version)
 
 
 ### Libraries to be installed manually:
