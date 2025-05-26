@@ -32,4 +32,7 @@ tao-pytorch: https://github.com/NVIDIA/tao_pytorch_backend
 <li>
 Deepstream-tao-apps: https://github.com/NVIDIA-AI-IOT/deepstream_tao_apps/tree/master
 </li>
+<li>
+TensorRT OSS (for TensorRT version below 10): https://github.com/NVIDIA/TensorRT/tree/release/7.0
+</li>
 </ul>
