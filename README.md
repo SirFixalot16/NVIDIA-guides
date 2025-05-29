@@ -13,6 +13,26 @@ Proposed installation process:
 <br>
 Miniconda -> CUDA (1 version) -> CuDNN (1 version) -> gstreamer (disable conda) -> Deepstream (1 version) -> TensorRT (multiple, enable conda) -> tao-toolkit (1 version)
 
+### CUDA version change
+If CUDA version has official uninstaller:
+```shell
+ls -l /usr/local/cuda-*/bin/
+sudo /usr/local/cuda-12.9/bin/cuda-uninstaller
+```
+
+If not:
+```shell
+sudo apt-get --purge remove cuda
+sudo apt-get autoremove
+dpkg --list |grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge
+```
+After installation, export path with:
+```shell
+export PATH=${PATH}:/usr/local/cuda-x/bin
+export CUDA_HOME=${CUDA_HOME}:/usr/local/cuda:/usr/local/cuda-x
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda-x/lib64
+```
+
 ### CuDNN version change 
 ```shell
 rm -f /usr/include/cudnn.h
@@ -44,5 +64,15 @@ Deepstream-tao-apps: https://github.com/NVIDIA-AI-IOT/deepstream_tao_apps/tree/m
 </li>
 <li>
 TensorRT OSS (for TensorRT version below 10): https://github.com/NVIDIA/TensorRT/tree/release/7.0
+</li>
+</ul>
+
+## References
+<ul>
+<li>
+https://stackoverflow.com/questions/50213021/best-practice-for-upgrading-cuda-and-cudnn-for-tensorflow
+</li>
+<li>
+CUDA installation guide: https://docs.nvidia.com/cuda/archive/9.1/cuda-installation-guide-linux/index.html
 </li>
 </ul>
