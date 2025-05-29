@@ -13,6 +13,16 @@ Proposed installation process:
 <br>
 Miniconda -> CUDA (1 version) -> CuDNN (1 version) -> gstreamer (disable conda) -> Deepstream (1 version) -> TensorRT (multiple, enable conda) -> tao-toolkit (1 version)
 
+### CuDNN version change 
+```shell
+rm -f /usr/include/cudnn.h
+rm -f /usr/lib/x86_64-linux-gnu/*libcudnn*
+rm -f /usr/local/cuda-*/lib64/*libcudnn*
+
+cp -P /path/to/new/cudnn/include/cudnn.h /usr/include
+cp -P /path/to/new/cudnn/lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
+chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*
+```
 
 ### Libraries to be installed manually:
 
