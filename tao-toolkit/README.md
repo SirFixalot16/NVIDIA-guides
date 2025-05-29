@@ -141,3 +141,24 @@ YOLO label format: <br>
 <br>Example: <br>
 Fire 0 0 0 614 181 727 284 0 0 0 0 0 0 0 <br>
 Smoke 0 0 0 123 456 789 012 0 0 0 0 0 0 0
+
+## Deploying tao trained models using TensorRT (TRT < 10.0)
+
+For TensorRT version lower than 10.0, some tao trained models may need TensorRT OSS for creating custom parser for Deepstream deployment. <br>
+For TensorRT 8.6.1.6:
+```shell
+git clone -b master https://github.com/nvidia/TensorRT TensorRT -b release/8.6
+cd TensorRT
+git submodule update --init --recursive
+```
+
+Building TensorRT OSS:
+```shell
+CC=/usr/bin/gcc-10 \
+CXX=/usr/bin/g++-10 \
+CUDAHOSTCXX=/usr/bin/g++-10 \
+cmake .. -DTRT_LIB_DIR=/path/to/taotest/TensorRT-8.6.1.6/lib -DTRT_BIN_DIR=/path/to/taotest/TensorRT_OSS/TensorRT/out
+```
+
+### Example: Setting up YOLOv4-tiny Object Detection
+...
