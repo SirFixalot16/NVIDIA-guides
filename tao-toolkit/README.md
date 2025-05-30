@@ -176,6 +176,9 @@ or just:
 ```shell
 git clone https://github.com/NVIDIA-AI-IOT/deepstream_tao_apps.git
 ```
+
+For custom models not officially supported by Deepstream or tao models that do not have official Deepstream integration, custom inference parser may need to be manually configurated and built using C/C++ with the guide of deepstream-tao-app.
+<br>
 Build custom parser:
 ```shell
 
