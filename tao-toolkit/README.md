@@ -158,7 +158,50 @@ CC=/usr/bin/gcc-10 \
 CXX=/usr/bin/g++-10 \
 CUDAHOSTCXX=/usr/bin/g++-10 \
 cmake .. -DTRT_LIB_DIR=/path/to/taotest/TensorRT-8.6.1.6/lib -DTRT_BIN_DIR=/path/to/taotest/TensorRT_OSS/TensorRT/out
+make -j$(nproc)
+sudo make install
 ```
+Install git-lfs:
+```shell
+cd /path/to/taotest
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+git lfs install
+```
+Clone deepstream-tao-app repo:
+```shell
+git clone -b release/tlt3.0 https://github.com/NVIDIA-AI-IOT/deepstream_tlt_apps
+```
+or just:
+```shell
+git clone https://github.com/NVIDIA-AI-IOT/deepstream_tao_apps.git
+```
+Build custom parser:
+```shell
+
+```
+
+If build fails for any reason, delete the contents of the build folder and rebuild.
 
 ### Example: Setting up YOLOv4-tiny Object Detection
 ...
+
+
+## References
+<ul>
+<li>
+https://docs.nvidia.com/metropolis/deepstream/6.4/dev-guide/text/DS_using_custom_model.html
+</li>
+<li>
+https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_using_custom_model.html
+</li>
+<li>
+https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinferserver.html#to-read-or-parse-inference-raw-tensor-data-of-output-layers
+</li>
+<li>
+https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_TAO_integration.html
+</li>
+<li>
+https://docs.nvidia.com/tao/tao-toolkit-archive/tao-30-2202/text/object_detection/yolo_v4_tiny.html
+</li>
+</ul>
