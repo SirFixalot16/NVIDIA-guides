@@ -176,7 +176,8 @@ or just:
 ```shell
 git clone https://github.com/NVIDIA-AI-IOT/deepstream_tao_apps.git
 ```
-
+If build fails for any reason, delete the contents of the build folder and rebuild.
+<br>
 For custom models not officially supported by Deepstream or tao models that do not have official Deepstream integration, custom inference parser may need to be manually configurated and built using C/C++ with the guide of deepstream-tao-app.
 <br>
 For tao-toolkit supported models, the following requires TensorRT OSS:
@@ -188,17 +189,9 @@ Object detection: FasterRCNN, YOLO (all versions), SSD, DSSD, RetinaNet, Efficie
 Instance segmentation: MaskRCNN
 </li>
 </ul>
-<br>
-Build custom parser:
-```shell
-
-```
-
-If build fails for any reason, delete the contents of the build folder and rebuild.
 
 ### Example: Setting up YOLOv4-tiny Object Detection
 ...
-
 
 ## References
 <ul>
