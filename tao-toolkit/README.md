@@ -188,6 +188,9 @@ Object detection: FasterRCNN, YOLO (all versions), SSD, DSSD, RetinaNet, Efficie
 <li>
 Instance segmentation: MaskRCNN
 </li>
+<li>
+Pre-trained model: PeopleSegNet
+</li>
 </ul>
 
 ### Example: Setting up YOLOv4-tiny Object Detection
