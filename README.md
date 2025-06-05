@@ -65,6 +65,9 @@ Deepstream-tao-apps: https://github.com/NVIDIA-AI-IOT/deepstream_tao_apps/tree/m
 <li>
 TensorRT OSS (for TensorRT version below 10): https://github.com/NVIDIA/TensorRT/tree/release/7.0
 </li>
+<li>
+Extended TensorRT operations: https://github.com/wang-xinyu/tensorrtx
+</li>
 </ul>
 
 ## References
@@ -74,5 +77,11 @@ https://stackoverflow.com/questions/50213021/best-practice-for-upgrading-cuda-an
 </li>
 <li>
 CUDA installation guide: https://docs.nvidia.com/cuda/archive/9.1/cuda-installation-guide-linux/index.html
+</li>
+<li>
+https://github.com/zhouyuchong/face-recognition-deepstream
+</li>
+<li>
+https://github.com/SauravSinghPaliwal/Deepstream-Face-Recognition
 </li>
 </ul>
