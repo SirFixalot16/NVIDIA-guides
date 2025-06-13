@@ -5,9 +5,10 @@ Guides for installation and usage of NVIDIA tools
 <p>
 <ul>
 <li>Ubuntu: 22.04 </li>
-<li>CUDA: 12.6 </li>
-<li>TensorRT: 10.11.0.33 for CUDA 12.x </li>
-<li>CuDNN: >9.3.0 for CUDA 12.x </li>
+<li>CUDA: 12.2 </li>
+<li>TensorRT: 8.6.1.6 for CUDA 12.x </li>
+<li>CuDNN: 8.9.7 for CUDA 12.x </li>
+<li>Deepstream: 6.4 </li>
 <li>Miniconda: Python 3.10.x </li>
 <li>Storage: >120GB </li>
 <li>GPU: VRAM>12GB </l>
