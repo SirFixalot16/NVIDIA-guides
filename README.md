@@ -84,4 +84,7 @@ https://github.com/zhouyuchong/face-recognition-deepstream
 <li>
 https://github.com/SauravSinghPaliwal/Deepstream-Face-Recognition
 </li>
+<li>
+https://github.com/NVIDIA-AI-IOT/redaction_with_deepstream.git
+</li>
 </ul>
