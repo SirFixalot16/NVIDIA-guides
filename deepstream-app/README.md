@@ -15,6 +15,9 @@ Guides for installation and usage of NVIDIA tools
 </ul>
 </p>
 
+## Installation
+Install python bindings according to this page: https://github.com/NVIDIA-AI-IOT/deepstream_python_apps.git
+
 ## References
 <ul>
 <li>
