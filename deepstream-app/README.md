@@ -18,6 +18,14 @@ Guides for installation and usage of NVIDIA tools
 ## Installation
 Install python bindings according to this page: https://github.com/NVIDIA-AI-IOT/deepstream_python_apps.git
 
+## Configuration: Peoplenet
+The intial configuration for running PeopleNet is based on deepstream_test_1 of the above repository, modified accordingly to match the included peoplenet.sh - which is the gstreamer command line to run peoplenet with gstreamer
+```shell
+conda deactivate
+python3 peoplenet.py </path/to/video.mp4>
+```
+
+
 ## References
 <ul>
 <li>
