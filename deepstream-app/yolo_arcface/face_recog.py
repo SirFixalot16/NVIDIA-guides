@@ -369,21 +369,21 @@ class Face_Recog:
             print(f"ID: {result['id']}, Label: {result['label']}, Image Path: {result['image_path']}")
         return results
 
-# if __name__ == "__main__":
-#     face_recog = Face_Recog('/path/to/arcface_iresnet50_v1.0_infer')
-#     # Print initial DB state
-#     print("\n=== Initial state ===")
-#     face_recog.list_stored_faces(limit=100)
+if __name__ == "__main__":
+    face_recog = Face_Recog('/path/to/arcface_iresnet50_v1.0_infer')
+    # Print initial DB state
+    print("\n=== Initial state ===")
+    face_recog.list_stored_faces(limit=100)
     
-#     # Add all images from directory
-#     print("\n=== Adding images from directory ===")
-#     face_recog.add_faces_from_directory('/path/to/saved_faces')
+    # Add all images from directory
+    print("\n=== Adding images from directory ===")
+    face_recog.add_faces_from_directory('/path/to/saved_faces')
     
-# #     # Add a single image
-#     face_recog.add_face_db("add_frame", "/path/to/out_crops/stream_0/frame_3.jpg")
-#     # Print DB state after adding
-#     print("\n=== State after adding ===")
-#     face_recog.list_stored_faces(limit=100)
+#     # Add a single image
+    face_recog.add_face_db("add_frame", "/path/to/out_crops/stream_0/frame_3.jpg")
+    # Print DB state after adding
+    print("\n=== State after adding ===")
+    face_recog.list_stored_faces(limit=100)
     
 #     embed = face_recog.get_id_embedding('add_frame')
 #     print(embed)

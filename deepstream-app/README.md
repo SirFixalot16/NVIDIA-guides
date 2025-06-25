@@ -44,10 +44,20 @@ python3 -c "from pymilvus import Collection"
 ```
 Install paddle-paddle according to hardware:
 https://www.paddlepaddle.org.cn/documentation/docs/en/install/index_en.html
-
 <br>
-Run the app:
 
+Obtain the ArcFace model from the following source:
+https://github.com/deepinsight/insightface/tree/master/recognition/arcface_paddle
+<br>
+To acquire YOLO face detection model, we recommend self-depedence. 
+<br>
+
+To add all faces needed to recognise from a folder to a Milvus collection, modify the paths in main function of face_recog.py and run as follows:
+```shell
+python3 face_recog.py
+```
+
+To run the app, modify and run the run.sh script, modify and run the ffmep.sh script to capture the rtsp stream and save to output.mp4.
 ```shell
 conda deactivate
 ./run.sh

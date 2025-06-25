@@ -1,3 +1,4 @@
 deepstream-app/yolo_arcface/arcface_iresnet50_v1.0_infer
 deepstream-app/yolo_arcface/model_face_detection
 samples
+*.engine
