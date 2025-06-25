@@ -12,6 +12,7 @@ Guides for installation and usage of NVIDIA tools
 <li>Miniconda: Python 3.10.x </li>
 <li>Storage: >120GB </li>
 <li>GPU: VRAM>12GB </l>
+<li>DB: Milvus </li>
 </ul>
 </p>
 
@@ -33,12 +34,25 @@ python3 peoplenet_multistream_redaction.py -i file:///path/to/video.mp4 -c H264
 ```
 
 ## Configuration: YOLO Face Object Detection + ArcFace
-Running YOLO Face Objection Detection in Deepstream pipeline and ArcFace on Python pipeline, based on deepstream_imagedata_multistream_redaction of the above repository.
+Running YOLO Face Objection Detection in Deepstream pipeline and ArcFace on Python pipeline, based on deepstream_imagedata_multistream_redaction of the above repository. <br>
+For this configuration, installation and use of Milvus is required, install independently, or use the included scripts:
 ```shell
 conda deactivate
-python3 peoplenet_multistream_redaction.py -i file:///path/to/video.mp4 -c H264
+bash standalone_embed.sh start
+python3 -m pip install pymilvus
+python3 -c "from pymilvus import Collection"
 ```
+Install paddle-paddle according to hardware:
+https://www.paddlepaddle.org.cn/documentation/docs/en/install/index_en.html
 
+<br>
+Run the app:
+
+```shell
+conda deactivate
+./run.sh
+./ffmep.sh
+```
 
 ## References
 <ul>
@@ -50,5 +64,8 @@ https://github.com/riotu-lab/deepstream-facenet/
 </li>
 <li>
 https://forums.developer.nvidia.com/t/what-model-to-use-for-face-recognition/216693/22
+</li>
+<li>
+https://milvus.io/docs/fr/install_standalone-docker.md
 </li>
 </ul>
