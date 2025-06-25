@@ -1,4 +1,4 @@
-gst-launch-1.0 -v filesrc location=/home/khmt/taotest/arcface/tvt.mp4 ! \
+gst-launch-1.0 -v filesrc location=/path/to/video.mp4 ! \
     qtdemux name=demux ! \
     queue ! \
     h264parse ! \
@@ -8,6 +8,8 @@ gst-launch-1.0 -v filesrc location=/home/khmt/taotest/arcface/tvt.mp4 ! \
     "video/x-raw(memory:NVMM), format=NV12, width=1280, height=720" ! \
     mux.sink_0 nvstreammux name=mux batch-size=1 width=1280 height=720 live-source=0 ! \
     queue ! \
+    nvinfer config-file-path=/path/to/peoplenet/peoplenet_infer_config.txt ! \
+    queue !  \
     nvdsosd ! \
     nvvideoconvert ! \
     "video/x-raw, format=RGBA" ! \

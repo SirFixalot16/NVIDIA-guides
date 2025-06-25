@@ -25,6 +25,20 @@ conda deactivate
 python3 peoplenet.py </path/to/video.mp4>
 ```
 
+## Configuration: Peoplenet-Redaction
+The intial configuration for running PeopleNet is based on deepstream_imagedata_multistream_redaction of the above repository.
+```shell
+conda deactivate
+python3 peoplenet_multistream_redaction.py -i file:///path/to/video.mp4 -c H264
+```
+
+## Configuration: YOLO Face Object Detection + ArcFace
+Running YOLO Face Objection Detection in Deepstream pipeline and ArcFace on Python pipeline, based on deepstream_imagedata_multistream_redaction of the above repository.
+```shell
+conda deactivate
+python3 peoplenet_multistream_redaction.py -i file:///path/to/video.mp4 -c H264
+```
+
 
 ## References
 <ul>
