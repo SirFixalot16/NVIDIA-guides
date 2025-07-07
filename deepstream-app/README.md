@@ -33,7 +33,7 @@ conda deactivate
 python3 peoplenet_multistream_redaction.py -i file:///path/to/video.mp4 -c H264
 ```
 
-## Configuration: YOLO Face Object Detection + ArcFace
+## Configuration: YOLO Face Object Detection + ArcFace (DS + Python pipeline method)
 Running YOLO Face Objection Detection in Deepstream pipeline and ArcFace on Python pipeline, based on deepstream_imagedata_multistream_redaction of the above repository. <br>
 For this configuration, installation and use of Milvus is required, install independently, or use the included scripts:
 ```shell
@@ -64,7 +64,7 @@ conda deactivate
 ./ffmep.sh
 ```
 
-## Configuration: Peoplenet-Arcface
+## Configuration: Peoplenet-Arcface (DS pipeline method)
 Clone the following repository TensorRTx [https://github.com/wang-xinyu/tensorrtx.git] and obtain ArcFace weight. Do the following steps to generate ArcFace engine:
 1. Copy the arcface weights to tensorrtx/arcface
 2. 
@@ -83,8 +83,17 @@ bash video2mp4.sh
 The intial configuration for running PeopleNet+Arcface is based on deepstream_test_2 of the above repository.
 ```shell
 conda deactivate
-python3 arcface_probe.py /path/to/video.h264
+python3 peoplenet_arcface_probe.py /path/to/video.h264
 ```
+This python app only retrieves the embedding, and print the frame index, object ID, size of embedding array and first 10 elements of it.
+
+## Configuration: YOLO-Arcface (DS pipeline method)
+The intial configuration for running PeopleNet+Arcface is based on deepstream_test_2 of the above repository.
+```shell
+conda deactivate
+python3 yolo_arcface_probe.py /path/to/video.h264
+```
+This python app only retrieves the embedding, and print the frame index, object ID, size of embedding array and first 10 elements of it.
 
 ## References
 <ul>
