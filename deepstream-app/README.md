@@ -64,6 +64,28 @@ conda deactivate
 ./ffmep.sh
 ```
 
+## Configuration: Peoplenet-Arcface
+Clone the following repository TensorRTx [https://github.com/wang-xinyu/tensorrtx.git] and obtain ArcFace weight. Do the following steps to generate ArcFace engine:
+1. Copy the arcface weights to tensorrtx/arcface
+2. 
+```shell
+cd /path/to/tensorrtx/arcface
+mkdir build && cd build && cmake .. && make
+./arcface-r100 -s
+```
+3. Save "arcface-r100.engine" and "libArcFaceDecoder.so" for Deepstream deployment.
+<br>
+
+Before running the python app, this app requires input video to be in .h264 form, edit and use the the provided bash script to convert desired video to .h264.
+```shell
+bash video2mp4.sh
+```
+The intial configuration for running PeopleNet+Arcface is based on deepstream_test_2 of the above repository.
+```shell
+conda deactivate
+python3 arcface_probe.py /path/to/video.h264
+```
+
 ## References
 <ul>
 <li>
@@ -77,5 +99,11 @@ https://forums.developer.nvidia.com/t/what-model-to-use-for-face-recognition/216
 </li>
 <li>
 https://milvus.io/docs/fr/install_standalone-docker.md
+</li>
+<li>
+https://github.com/SauravSinghPaliwal/Deepstream-Face-Recognition
+</li>
+<li>
+https://github.com/wang-xinyu/tensorrtx.git
 </li>
 </ul>

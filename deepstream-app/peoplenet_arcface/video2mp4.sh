@@ -1,0 +1,1 @@
+ffmpeg -i /path/to/video.mp4 -c:v libx264 /path/to/output.h264
